@@ -14,19 +14,26 @@ Group Allocation
         Edit project info
         Get term status
         Assignment 0 submission
-Get term student and group info for spreadsheet view
-Call algorithm 
+        Get term student and group info for spreadsheet view
+        Call algorithm 
 
 
 Variables for algorithm
+student:
+        Name: string,
+        CanDoSummer: bit, //only for students taking sd1 in the spring
+        CanDoFall: bit, //only for students taking sd1 in the spring
+        PriorityList: list of ints,
+        AttendedBootcamp: bit,
+        GPA: int,
 
-
-        
-        
-        
-        
-        
-        
+project:
+        ID: int,
+        Name: string,
+        Min: int,
+        Max: int,
+        CanBeSummer: bit //only for projects starting in the spring
+        CanBeFall: bit //only for projects starting in the spring
 
 
 ________________
