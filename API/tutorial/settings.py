@@ -26,7 +26,7 @@ SECRET_KEY = '16!vrk73vdau-@q%h9a)o3!caqv%en7%p)sd^lz=j4-+=2@p^t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["10.171.204.211", "127.0.0.1"]
 
 
 # Application definition
@@ -117,7 +117,7 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True,
 
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': 'Thisisakey',
+    'SIGNING_KEY': SECRET_KEY,
     'VERIFYING_KEY': None,
 
     'AUTH_HEADER_TYPES': ('Bearer',),
