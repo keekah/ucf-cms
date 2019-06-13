@@ -19,7 +19,7 @@ class Student(models.Model):
     technicalSkills = models.TextField(blank=True)
     knownLanguages = models.TextField(blank=True)
     workExperience = models.TextField(blank=True)
-    resumeLink = models.TextField(blank=True)
+    resumeLink = models.TextField(blank=True, default="N/A")
 
 class StudentProjectRanking(models.Model):
     StudentID = models.IntegerField()

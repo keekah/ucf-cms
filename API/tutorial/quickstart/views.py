@@ -5,6 +5,7 @@ from tutorial.quickstart.serializers import UserSerializer, GroupSerializer, Pro
 from rest_framework.permissions import IsAuthenticated
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
@@ -22,11 +23,19 @@ class CmsViewSet(viewsets.ModelViewSet):
 @csrf_exempt
 def SubmitAssignmentOne(request):
     try:
-        data = request.POST
-        Student.objects.create(firstName=data['firstName'], lastName=data['lastName'], knightsEmail=data['knightsEmail'],
+        data = json.loads(request.body)
+        query = Student(firstName=data['firstName'], lastName=data['lastName'], knightsEmail=data['knightsEmail'],
                                UCFID=data['UCFID'], overallGPA=data['overallGPA'], majorGPA=data['majorGPA'],
                                term=data['term'], intrestArea=data['intrestArea'], technicalSkills=data['technicalSkills'],
                                knownLanguages=data['knownLanguages'], workExperience=data['workExperience'])
+        query.save()
+        i = 1
+        for obj in data["index"]:
+            project = Project.objects.get(ProjectName=obj["ProjectName"])
+            query2 = StudentProjectRanking(StudentID=query.id, ProjectID=project.id, Ranking=i)
+            query2.save()
+            i += 1
+
         return HttpResponse(status=200)
     except Exception as e:
         return HttpResponse(status=400, content=str(e))
