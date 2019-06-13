@@ -30,7 +30,7 @@ def SubmitAssignmentOne(request):
                                knownLanguages=data['knownLanguages'], workExperience=data['workExperience'])
         query.save()
         i = 1
-        for obj in data["index"]:
+        for obj in data["items"]:
             project = Project.objects.get(ProjectName=obj["ProjectName"])
             query2 = StudentProjectRanking(StudentID=query.id, ProjectID=project.id, Ranking=i)
             query2.save()
