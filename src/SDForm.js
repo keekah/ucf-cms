@@ -12,11 +12,46 @@ import { ReactComponent as DragnDrop } from "./dnd.svg";
 
 
 class SDForm extends Component {
-  
-  state = {
-    items: ["AR Cemetery", "Grave Navigation", "PEAR", " NASA", "Security"],
-    other: ["Crypto", "Photo", "Tasks", "Sherlock"]
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firstName: "",
+      lastName: "",
+      knightsEmail: "",
+      UCFID: "",
+      overallGPA: "",
+      majorGPA: "",
+      term: "",
+      interestArea: "",
+      technicalSkills: "",
+      knownLanguages: "",
+      workExperience: "",
+      items: [],
+      other: ["AR Cemetery", "Grave Navigation", "PEAR", " NASA", "Security", "Crypto", "Photo", "Tasks", "Sherlock"]
+    }
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    let userData = this.state;
+
+    fetch("http://10.171.204.211/users/?format=api", {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(response => {
+      response.json().then(data => {
+        console.log("Successful" + data);
+      });
+    });
+  }
+
 
   onDragStart = (e, index) => {
     this.draggedItem = this.state.items[index];
@@ -57,13 +92,23 @@ class SDForm extends Component {
       items: [...prevState.items, e]
     }))
   };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  printToConsole = () => {
+    console.log(this.state)
+  }
   
   render() {
     return (
       <Container>
         <Col className="UCFLogo"><img src={logo} /></Col> 
         
-        <Form className="SDForm">
+        <Form className="SDForm" onSubmit={this.handleFormSubmit}>
           <Col>
             <h1 className="mainTitles">Senior Design Project Selection</h1>
           </Col>
@@ -71,13 +116,13 @@ class SDForm extends Component {
             <Col> 
               <FormGroup>
                 <Label>First Name</Label>
-                <Input type="text" id="firstName" />
+                <Input type="text" id="firstName" onChange={this.handleChange.bind(this)} value={this.state.firstName}/>
               </FormGroup>
             </Col>
             <Col> 
               <FormGroup>
                 <Label>Last Name</Label>
-                <Input type="text" id="lastName" />
+                <Input type="text" id="lastName" onChange={this.handleChange.bind(this)} value={this.state.lastName} />
               </FormGroup>
             </Col>
           </Row>
@@ -85,7 +130,7 @@ class SDForm extends Component {
           <Col xs="6">
             <FormGroup>
               <Label>UCF ID</Label>
-              <Input type="number" id="UCFID" />
+              <Input type="number" id="UCFID" onChange={this.handleChange.bind(this)} value={this.state.UCFID} />
               <FormText className="text-muted">
                 7 digit student ID
               </FormText>
@@ -93,7 +138,7 @@ class SDForm extends Component {
 
             <FormGroup>
               <Label>Knights Email</Label>
-              <Input type="email" id="knightsEmail"/>
+              <Input type="email" id="knightsEmail" onChange={this.handleChange.bind(this)} value={this.state.knightsEmail} />
               <FormText className="text-muted">
                 example@knights.ucf.edu
               </FormText>
@@ -104,13 +149,13 @@ class SDForm extends Component {
             <Col> 
               <FormGroup>
                 <Label>Overall GPA</Label>
-                <Input type="number" id="overallGPA" />
+                <Input type="number" id="overallGPA" onChange={this.handleChange.bind(this)} value={this.state.overallGPA} />
               </FormGroup>
             </Col>
             <Col> 
               <FormGroup>
                 <Label>Major GPA</Label>
-                <Input type="number" id="majorGPA" />
+                <Input type="number" id="majorGPA" onChange={this.handleChange.bind(this)} value={this.state.majorGPA} />
               </FormGroup>
             </Col>
           </Row>
@@ -120,19 +165,19 @@ class SDForm extends Component {
               <Label>Which semester will you be taking Senior Design 2?</Label>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="term" id="term" />{' '}
+                  <Input type="radio" name="term" id="term" onChange={this.handleChange.bind(this)} value={this.state.term} />{' '}
                   Spring
                 </Label>
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="term" id="term" />{' '}
+                  <Input type="radio" name="term" id="term" onChange={this.handleChange.bind(this)} value={this.state.term} />{' '}
                   Summer
                 </Label>
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="term" id="term" />{' '}
+                  <Input type="radio" name="term" id="term" onChange={this.handleChange.bind(this)} value={this.state.term} />{' '}
                   Fall
                 </Label>
               </FormGroup>
@@ -142,19 +187,19 @@ class SDForm extends Component {
           <Col xs="9">
             <FormGroup>
               <Label> Area(s) of Interest</Label>
-              <Input type="textarea" id="interestArea" />
+              <Input type="textarea" id="interestArea" onChange={this.handleChange.bind(this)} value={this.state.interestArea} />
             </FormGroup>
             <FormGroup>
               <Label> Technical Skills/Strengths</Label>
-              <Input type="textarea" id="technicalSkills" />
+              <Input type="textarea" id="technicalSkills" onChange={this.handleChange.bind(this)} value={this.state.technicalSkills} />
             </FormGroup>
             <FormGroup>
               <Label> Known Programming Languages</Label>
-              <Input type="textarea" id="knownLanguages" />
+              <Input type="textarea" id="knownLanguages" onChange={this.handleChange.bind(this)} value={this.state.knownLanguages} />
             </FormGroup>
             <FormGroup>
               <Label> Relevant Work Experience</Label>
-              <Input type="textarea" id="workExperience" />
+              <Input type="textarea" id="workExperience" onChange={this.handleChange.bind(this)} value={this.state.workExperience} />
             </FormGroup>
           </Col>
 
@@ -213,7 +258,7 @@ class SDForm extends Component {
           
 
         <Col style={{alignItems: 'center'}}>
-          <Button>Submit</Button>
+          <Button onClick={this.printToConsole}>Submit</Button>
         </Col>
       </Form>
       </Container>

@@ -6,7 +6,18 @@ import {
 } from 'reactstrap';
 import './SDForm.css';
 import logo from'./UCFLogo.png';
-import { Link } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+/*
+const Title = () => {
+  return (
+      <div className="title">
+        <h1>React Router demo</h1>
+        <Link to="/SDForm"><button>SDForm</button></Link>
+      </div>
+  )
+}
+*/
 
 
 class LoginPage extends Component {
@@ -88,7 +99,7 @@ class LoginPage extends Component {
             </FormGroup>
           </Col>
 
-          <Button className="subTitle">Submit</Button>
+          <Button className="subTitle" >Submit</Button>
 
         </Form>
       </Container>
