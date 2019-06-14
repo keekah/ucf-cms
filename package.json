@@ -5,6 +5,7 @@
   "dependencies": {
     "array-move": "^2.1.0",
     "bootstrap": "^4.2.0",
+    "generate-password": "^1.4.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-router": "^5.0.1",
@@ -12,7 +13,8 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "react-sortable-hoc": "^1.9.1",
-    "reactstrap": "^7.0.0"
+    "reactstrap": "^7.0.0",
+    "sendemail": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
