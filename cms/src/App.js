@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Sponsors from './pages/Sponsors';
@@ -14,7 +15,7 @@ class App extends React.Component {
       <Router>
         <div>
           
-          <Route exact path="/" component={Poopy} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/projects" component={Projects} />
           <Route path="/sponsors" component={Sponsors} />
@@ -27,11 +28,6 @@ class App extends React.Component {
 
 }
 
-const Poopy = () => {
-  return (
-    <h1>hello</h1>
-  );
-};
 
 
 export default App;
