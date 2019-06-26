@@ -10,7 +10,12 @@ class Page extends React.Component {
       <Header />
 
       <Container className="mt-4">
-        <h2>{this.props.title}</h2>
+        {this.props.title ? 
+          <h2>{this.props.title}</h2>
+        :
+          <></>
+        }
+        
         {this.props.children}
       </Container>
 

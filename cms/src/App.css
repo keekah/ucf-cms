@@ -6,3 +6,21 @@
   background-color: #343a40!important;
 }
 
+#project-search-button {
+  background-color: #ffc904;
+  color: #000;
+  border-color: #343a40;
+}.App {
+  text-align: center;
+}
+
+#keeks {
+  background-color: #343a40!important;
+}
+
+#project-search-button {
+  background-color: #ffc904;
+  color: #000;
+  border-color: #ffc904;
+}
+
