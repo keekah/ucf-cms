@@ -11,7 +11,7 @@ class Page extends React.Component {
 
       <Container className="mt-4">
         {this.props.title ? 
-          <h2>{this.props.title}</h2>
+          <h2 className="mb-4">{this.props.title}</h2>
         :
           <></>
         }

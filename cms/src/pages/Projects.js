@@ -12,6 +12,7 @@ class Projects extends React.Component {
   state = { 
     isLoaded: false,
     projects: [],
+    searchFilter: '',
   }
 
   componentDidMount(){
@@ -26,14 +27,17 @@ class Projects extends React.Component {
         this.setState({ isLoaded: true, projects: [
           { ProjectName: "Poopy1", Term: "Spring", Year:"1996" },
           { ProjectName: "Bernie", Term: "Fall", Year: "2020" },
-          { ProjectName: "Remus' Big Adventure", Term: "Fall", Year: "2019"}
+          { ProjectName: "Remus' Big Adventure", Term: "Fall", Year: "2019" }
         ] });
       });
   }
 
+  updateSearchFilter = evt => this.setState({searchFilter: evt.target.value});
+
+
   render() {
 
-    let { isLoaded, projects } = this.state;
+    let { isLoaded, projects, searchFilter } = this.state;
 
     let projectList = <></>;
 
@@ -47,6 +51,12 @@ class Projects extends React.Component {
         </Col>
       </Row>;
 
+    if (searchFilter)
+    {
+      projects = projects.filter(project => project.ProjectName.toLowerCase().includes(searchFilter.toLowerCase()));
+    }
+    
+
     if (isLoaded) {
       projectList = (
         <Container>
@@ -58,9 +68,9 @@ class Projects extends React.Component {
     return <>
       <Page>
         <Row>
-          <h2>Projects</h2> 
+          <h2 className="mb-4">Projects</h2> 
           <Form className="ml-auto" inline>
-            <Input name="search" placeholder="Search Projects"></Input>
+            <Input name="search" placeholder="Search projects" value={this.state.searchFilter} onChange={evt => this.updateSearchFilter(evt)} />
             <Button id="project-search-button">
               <FontAwesomeIcon icon="search" />
             </Button>
