@@ -34,7 +34,7 @@ class Projects extends React.Component {
       .catch(err => {
         console.log("looks like the backend is being worked on");
         this.setState({ isLoaded: true, projects: [
-          { ProjectName: "Poopy1", Term: "Spring", Year:"1996" },
+          { ProjectName: "Super Mario", Term: "Spring", Year:"1996" },
           { ProjectName: "Bernie", Term: "Fall", Year: "2020" },
           { ProjectName: "Remus' Big Adventure", Term: "Fall", Year: "2019" }
         ] });
