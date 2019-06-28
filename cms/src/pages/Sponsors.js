@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Page from '../components/Page';
 
@@ -6,10 +7,10 @@ import Page from '../components/Page';
 class Sponsors extends React.Component {
   render() {
     return <>
-      <Page title="Sponsors">
+      <Page title="Sponsoring a CS Senior Design Project">
 
-        Sponsoring CS Senior Design Projects<br />
         Professor Mark Heinrich, Updated July 23, 2013<br /><br />
+
         There are several ways to get involved in CS Senior Design at UCF. You may choose any combination of the following:<br />
 
         <ul>
@@ -18,7 +19,7 @@ class Sponsors extends React.Component {
           <li>Suggest a project to the course instructor</li>
         </ul>
 
-        If you would like to contribute in any of the ways listed above, or have other ideas about ways you would like to contribute, to CS Senior Design please download the Project Proposal/Description Form or contact Dr. Mark Heinrich.<br /><br />
+        If you would like to contribute in any of the ways listed above, or have other ideas about ways you would like to contribute, to CS Senior Design please download the Project Proposal/Description Form or contact <Link to="/contact">Dr. Mark Heinrich</Link>.<br /><br />
 
         <strong>Please note that any projects must be approved by the instructor.</strong> Once approved, a synopsis of the potential project will be posted to the website (see the Projects tab above), which may include a further link to a more complete project specification. All projects should contain components of design and analysis and be feasible by a small team of 3 or 4 students in 4-5 months (including both design and implementation).<br /><br />
 

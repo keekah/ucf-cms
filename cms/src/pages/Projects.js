@@ -15,8 +15,17 @@ class Projects extends React.Component {
     searchFilter: '',
   }
 
+  fetchWithTimeout = (url, options, timeout = 3000) => {
+    return Promise.race([
+      fetch(url, options),
+      new Promise((_, reject) =>
+        setTimeout( () => reject(new Error('timeout')), timeout)
+      )
+    ]);
+  }
+
   componentDidMount(){
-    fetch('http://10.171.204.211/projects/')
+    this.fetchWithTimeout('http://10.171.204.211/projects/', {}, 3000)
       .then(res => res.json())
       .then(json => {
         console.log(json);
@@ -56,7 +65,6 @@ class Projects extends React.Component {
       projects = projects.filter(project => project.ProjectName.toLowerCase().includes(searchFilter.toLowerCase()));
     }
     
-
     if (isLoaded) {
       projectList = (
         <Container>
