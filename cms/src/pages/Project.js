@@ -9,7 +9,7 @@ class Project extends React.Component {
     return <Page>
       <Row>
       <h2 className="mb-4">{this.props.project.ProjectName}</h2> 
-      <h5 className="mb-4 ml-auto">{this.props.project.GroupMembers}</h5> 
+      <h5 id="groupMembers" className="mb-4 ml-auto">{this.props.project.GroupMembers}</h5> 
       </Row>
       <Jumbotron fluid>
        <Container fluid>

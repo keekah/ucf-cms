@@ -11,7 +11,7 @@ const Footer = () => <Container>
     </Col>
     <Col xs="6">
       <h4>Contact</h4>
-      <p>We would love to hear from you regarding your ideas for supporting, mentoring, or sponsoring Computer Science Senior Design teams at UCF. You can either <a href="./contact">contact us</a> or call and leave a message at +1 (407) 882-0138</p><p>Also Marco was here</p>
+      <p>We would love to hear from you regarding your ideas for supporting, mentoring, or sponsoring Computer Science Senior Design teams at UCF. You can either <a href="./contact">contact us</a> or call and leave a message at +1 (407) 882-0138</p>
     </Col>
   </Row>
 </Container>

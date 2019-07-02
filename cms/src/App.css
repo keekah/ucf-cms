@@ -25,3 +25,13 @@
   margin-right: auto;
 }
 
+#heinrich {
+  border-radius: 8px;
+}
+
+#groupMembers:before {
+  height: 100%;
+  vertical-align: bottom;
+  display: inline-block;
+  content: "";
+}

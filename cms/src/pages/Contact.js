@@ -41,7 +41,7 @@ class Contact extends React.Component {
         <Container>
           <Row>
             <Col xs="auto">
-              <FontAwesomeIcon icon="envelope" onClick={document.execCommand('copy')}/> heinrich@cs.ucf.edu
+              <FontAwesomeIcon icon="envelope" onClick={() => document.execCommand('copy')}/> heinrich@cs.ucf.edu
             </Col>
             <Col xs="auto">
               <FontAwesomeIcon icon="phone-alt" /> (407)-882-0138
@@ -59,7 +59,7 @@ class Contact extends React.Component {
         </Container>
        
           <br />
-          <img src="../images/tortoise.jpg" alt="Dr. Heinrich with a tortoise"></img><br /><br />
+          <img src="../images/tortoise.jpg" alt="Dr. Heinrich with a tortoise" id="heinrich"></img><br /><br />
           <p>Dr. Heinrich received his BS in Electrical Engineering and Computer Science (double major) from Duke University in 1991, where he graduated first in his class and summa cum laude. He earned his M.S. and Ph.D. in Electrical Engineering from Stanford University in 1993 and 1998, respectively. At Stanford while studying under John Hennessy, he was a principal designer of the FLASH multiprocessor, designed and evaluated several protocols for the machine and wrote its system-level simulator. His research interests include novel parallel computer architectures, data-intensive computing, energy-efficient architectures, and scalable web services.<br /><br />
 
           Dr. Heinrich was an Assistant Professor in ECE at Cornell University (1998-2002) and a co-founder of its Computer Systems Laboratory. He received the Cornell IEEE Teacher of the Year Award (1999) and a College of Engineering Teaching Award (2001). He was also the co-founder and Chief Architect of Flashbase, Inc. (1998-2000, acquired by DoubleClick in May 2000) specializing in automated sweepstakes and database-backed forms and tools for customer acquisition.<br /><br />
