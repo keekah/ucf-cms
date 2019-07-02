@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 
+
 class Header extends React.Component {
     render() {
         return <>
@@ -15,13 +16,16 @@ class Header extends React.Component {
                     <NavLink href="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/about">About</NavLink>
+                    <NavLink href="/outline">Outline</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/projects">Projects</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/sponsors">Sponsors</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/students">Students</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/contact">Contact</NavLink>

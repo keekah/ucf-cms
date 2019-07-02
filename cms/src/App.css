@@ -9,23 +9,19 @@
 #project-search-button {
   background-color: #ffc904;
   color: #000;
-  border-color: #343a40;
-}.App {
-  text-align: center;
-}
-
-#keeks {
-  background-color: #343a40!important;
-}
-
-#project-search-button {
-  background-color: #ffc904;
-  color: #000;
   border-color: #ffc904;
+  margin-left: 0.5rem;
 }
 
 .jumbotron {
 	padding-top: 1rem!important;
 	padding-bottom: 1rem!important;
+}
+
+#hec {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
