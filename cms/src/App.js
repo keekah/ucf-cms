@@ -12,6 +12,7 @@ import Outline from './pages/Outline';
 import Sponsors from './pages/Sponsors';
 import Students from './pages/Students';
 import Contact from './pages/Contact';
+import Submissions from './pages/Submissions';
 
 library.add(fab, faBuilding, faEnvelope, faGlobe, faPhoneAlt, faSearch);
 
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route path="/sponsors" component={Sponsors} />
           <Route path="/students" component={Students} />
           <Route path="/contact" component={Contact} />
+          <Route path="/submissions" component={Submissions} />
 
       </Router>
     );

@@ -12,6 +12,22 @@ const SearchFilterMode = {
   Keyword: 4
 }
 
+const TermSelector = {
+  All: 1,
+  "Fall 2014": 2,
+  "Spring 2015": 3,
+  "Fall 2015": 4,
+  "Spring 2016": 5,
+  "Fall 2016": 6,
+  "Spring 2017": 7,
+  "Fall 2017": 8,
+  "Spring 2018": 9,
+  "Fall 2018": 10,
+  "Spring 2019": 11,
+  "Summer 2019": 12,
+  "Fall 2019": 13
+}
+
 
 class Projects extends React.Component {
 
@@ -182,9 +198,9 @@ class Projects extends React.Component {
                 Term: 
               </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>2019</DropdownItem>
-                  <DropdownItem>2018</DropdownItem>
-                  <DropdownItem>2017</DropdownItem>
+                  <DropdownItem>Spring 2019</DropdownItem>
+                  <DropdownItem>Fall 2018</DropdownItem>
+                  <DropdownItem>Spring 2018</DropdownItem>
                   <DropdownItem>2016</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
