@@ -77,6 +77,13 @@ class Submissions extends React.Component {
             </FormGroup>
 
             <FormGroup row>
+              <Label sm={2}>Sponsor</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
               <Label sm={2}>Initials/Acronym</Label>
               <Col sm={5}>
                 <Input type="text" />
@@ -88,6 +95,14 @@ class Submissions extends React.Component {
               <Label sm={2}>Project Description</Label>
               <Col sm={5}>
                 <Input type="textarea" />
+              </Col>
+            </FormGroup>
+
+            
+            <FormGroup row>
+              <Label sm={2}>Keywords</Label>
+              <Col sm={5}>
+                <Input type="text" />
               </Col>
             </FormGroup>
 

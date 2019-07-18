@@ -7,7 +7,7 @@ import { projectProposalForm, contactDrHeinrich } from '../App';
 
 const carouselImages = [
     {
-      src: 'http://www.eecs.ucf.edu/cssd/img/featured/limbitlessarmtracking.jpg',
+      src: '../images/showcase1.jpg',
       altText: 'Virtual Reality Training Demo',
       header: 'Florida Power & Light Showcase',
       caption: 'Virtual Reality Training Demo'

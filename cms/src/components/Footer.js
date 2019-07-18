@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'reactstrap';
+import { contactDrHeinrich } from '../App';
 
 const Footer = () => <Container>
 
@@ -11,7 +12,7 @@ const Footer = () => <Container>
     </Col>
     <Col xs="6">
       <h4>Contact</h4>
-      <p>We would love to hear from you regarding your ideas for supporting, mentoring, or sponsoring Computer Science Senior Design teams at UCF. You can either <a href="./contact">contact us</a> or call and leave a message at +1 (407) 882-0138</p>
+      <p>We would love to hear from you regarding your ideas for supporting, mentoring, or sponsoring Computer Science Senior Design teams at UCF. You can either contact {contactDrHeinrich()} or Dr. Richard Leinecker.</p>
     </Col>
   </Row>
 </Container>
