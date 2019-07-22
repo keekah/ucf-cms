@@ -17,7 +17,8 @@ import Submissions from './pages/Submissions';
 library.add(fab, faBuilding, faEnvelope, faGlobe, faPhoneAlt, faSearch);
 
 
-export const contactDrHeinrich = () => <Link to="/contact">Dr. Mark Heinrich</Link>;
+export const contactDrHeinrich = () => <Link to="/contact#heinrich">Dr. Mark Heinrich</Link>;
+export const contactDrLeinecker = () => <Link to="/contact#leinecker">Dr. Richard Leinecker</Link>;
 export const projectProposalForm = () => <a href="../ProjectDescription.docx">Project Proposal/Description form</a>;
 
 class App extends React.Component {

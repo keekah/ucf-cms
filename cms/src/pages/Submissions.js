@@ -28,18 +28,124 @@ class Submissions extends React.Component {
           
           <Form>
             <FormGroup row>
-              <Label sm={3}>Group Number</Label>
+              <Label sm={2}>Group Number</Label>
               <Col sm={1}>
                 <Input type="text" />
               </Col>
             </FormGroup>
 
             <FormGroup row>
-              <Label sm={3}>Project Name</Label>
+              <Label sm={2}>Project Name</Label>
               <Col sm={5}>
                 <Input type="text" />
               </Col>
             </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Sponsor(s)</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <br />
+
+            <h5>Group Member 1</h5>
+            <FormGroup row>
+              <Label sm={2}>First Name</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup> 
+
+            <FormGroup row>
+              <Label sm={2}>Last Name</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Public Email</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Photo</Label>
+              <Col sm={5}>
+                <Input type="file" />
+                <FormText color="muted">maximum size 1MB</FormText>
+              </Col>
+            </FormGroup>
+            
+            <h5>Group Member 2</h5>
+            <FormGroup row>
+              <Label sm={2}>First Name</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup> 
+
+            <FormGroup row>
+              <Label sm={2}>Last Name</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Public Email</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Photo</Label>
+              <Col sm={5}>
+                <Input type="file" />
+                <FormText color="muted">maximum size 1MB</FormText>
+              </Col>
+            </FormGroup>
+
+            <h5>Group Member 3</h5>
+            <FormGroup row>
+              <Label sm={2}>First Name</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup> 
+
+            <FormGroup row>
+              <Label sm={2}>Last Name</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Public Email</Label>
+              <Col sm={5}>
+                <Input type="text" />
+              </Col>
+            </FormGroup>
+
+            <FormGroup row>
+              <Label sm={2}>Photo</Label>
+              <Col sm={5}>
+                <Input type="file" />
+                <FormText color="muted">maximum size 1MB</FormText>
+              </Col>
+            </FormGroup>
+        
+          <a href="#">+ add another member</a>
+
+          <br />
+          <br />
+          <br />
+
 
             <FormGroup row>
               <Label sm={3}>Final Design Document (PDF)</Label>
@@ -77,7 +183,7 @@ class Submissions extends React.Component {
             </FormGroup>
 
             <FormGroup row>
-              <Label sm={2}>Sponsor</Label>
+              <Label sm={2}>Sponsor(s)</Label>
               <Col sm={5}>
                 <Input type="text" />
               </Col>
@@ -96,13 +202,43 @@ class Submissions extends React.Component {
               <Col sm={5}>
                 <Input type="textarea" />
               </Col>
+              <FormText color="muted">(approximately 200 words)</FormText>
             </FormGroup>
 
-            
             <FormGroup row>
               <Label sm={2}>Keywords</Label>
               <Col sm={5}>
-                <Input type="text" />
+                <Input type="select" multiple>
+                  <option>Artificial Intelligence (AI)</option>
+                  <option>Augmented Reality (AR)</option> 
+                  <option>Cloud Computing</option> 
+                  <option>Computer Vision</option> 
+                  <option>Cryptocurrency</option> 
+                  <option>Cybersecurity</option> 
+                  <option>Drones</option> 
+                  <option>Fitness</option>
+                  <option>Gaming</option>
+                  <option>History</option>
+                  <option>Interdisciplinary</option>
+                  <option>Machine Learning</option> 
+                  <option>Medical</option> 
+                  <option>Music</option>
+                  <option>Neural Networks</option>  
+                  <option>Parallel Computing</option>
+                  <option>Quantum Computing</option> 
+                  <option>Research</option>
+                  <option>Robotics</option>
+                  <option>Simulation</option>
+                  <option>Social</option> 
+                  <option>Solar Power</option>                   
+                  <option>Sports</option>
+                  <option>STEM</option> 
+                  <option>UCF</option>
+                  <option>Vehicles</option> 
+                  <option>Virtual Reality (VR)</option>
+                  <option>Voice</option> 
+                  <option>Webcourses</option>          
+                </Input>
               </Col>
             </FormGroup>
 

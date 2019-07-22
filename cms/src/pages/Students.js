@@ -8,7 +8,7 @@ import { contactDrHeinrich } from '../App';
 class Students extends React.Component {
   render() {
     return <Page title="Information for Students">
-      <p>These are resources for students currently enrolled within <strong>Computer Science Senior Design I (COP4934)</strong> and <strong>Senior Design II (COP4935)</strong>. If the information below does not answer your question, please reach out to {contactDrHeinrich()} for further assistance. Do not reach out to other university or department resources without first speaking with Dr. Heinrich.</p><br />
+      <p>These are resources for students currently enrolled within <strong>Computer Science Senior Design I (COP 4934)</strong> and <strong>Senior Design II (COP 4935)</strong>. If the information below does not answer your question, please reach out to {contactDrHeinrich()} for further assistance. Do not reach out to other university or department resources without first speaking with Dr. Heinrich.</p><br />
 
       <Alert color="warning"><h3 className="text-center">Senior Design Lab: HEC 102</h3></Alert>
       <h4>Rules</h4>
@@ -75,7 +75,7 @@ class Students extends React.Component {
       <p>If you are looking to host a virtual server to run a website, database, or other computing need, please contact Dr. Heinrich to schedule a brief 20-40 minute meeting with him. A minimum of two members need to attend, but all group members who will interface with the virtual machine should attend.</p><br />
 
       <h4>GitHub</h4>
-      We ask that all students put their project work on the <a href="https://github.com/ucfcs">University of Central Florida Department of Computer Science GitHub repository</a> so that teaching assistants, professor, and staff can help with the code and review it as necessary. To gain access, please email Dr. Heinrich with your current course (COP4934 or COP4935) and the GitHub usernames or associated emails of your team members. You will then be added to the department resources, where you can create your private or public repos under UCFCS.<br /><br />
+      We ask that all students put their project work on the <a href="https://github.com/ucfcs">University of Central Florida Department of Computer Science GitHub repository</a> so that teaching assistants, professor, and staff can help with the code and review it as necessary. To gain access, please email Dr. Heinrich with your current course (COP 4934 or COP 4935) and the GitHub usernames or associated emails of your team members. You will then be added to the department resources, where you can create your private or public repos under UCFCS.<br /><br />
 
       <div className="text-center">
         <Button color="secondary" href="/submissions">Submit Documents</Button>

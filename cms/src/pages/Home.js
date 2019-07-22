@@ -64,7 +64,7 @@ class Home extends React.Component {
 
 
       <h2>Questions</h2>
-      <p>For questions about the program or to seek assistance in completing the Proposed Project Description Form, please contact {contactDrHeinrich()}.</p><br />
+      <p>For questions about the program or to seek assistance in completing the {projectProposalForm()}, please contact {contactDrHeinrich()}.</p><br />
       
       </Page>
     </>
