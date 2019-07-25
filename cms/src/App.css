@@ -34,7 +34,7 @@
   border-radius: 8px;
 }
 
-#groupMembers:before {
+#project-header:before {
   height: 100%;
   vertical-align: bottom;
   display: inline-block;

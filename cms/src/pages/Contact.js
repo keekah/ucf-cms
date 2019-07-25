@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Nav, NavItem, NavLink,  Row, Tab, TabContent, TabPane } from 'reactstrap';
+import { Col, Container, Nav, NavItem, NavLink,  Row, TabContent, TabPane } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -22,31 +22,6 @@ class Contact extends React.Component {
       this.setState( {activeTab: tab} );
   }
 
-  copyToClipboard = text => {
-    let selected = false;
-    let element = document.createElement('textarea');
-    element.value = text;
-    element.setAttribute('readonly', '');
-    element.style.position = 'absolute';
-    element.style.left = '-9999px';
-    document.body.appendChild(element);
-
-    if (document.getSelection().rangeCount > 0)
-      selected = document.getSelection().getRangeAt(0);
-
-    element.select();
-    document.execCommand('copy');
-    document.body.removeChild(element);
-
-    if (selected) {
-      document.getSelection().removeAllRanges();
-      document.getSelection().addRange(selected);
-    }
-  }
-
-  //document.querySelect('#heinrich-email').addEventListener('click', copyToClipboard);); 
-
-  //copyEmailToClipboard = str => 
 
   render() {
     return <>

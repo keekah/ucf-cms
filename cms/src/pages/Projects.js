@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row } from 'reactstrap';
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Form, Input, Table } from 'reactstrap';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Form, Input, Row, Table} from 'reactstrap';
+import { Redirect } from 'react-router-dom';
 
 import Page from '../components/Page';
 import Project from '../pages/Project';
@@ -12,23 +12,6 @@ const SearchFilterMode = {
   Keyword: 4
 }
 
-const TermSelector = {
-  All: 1,
-  "Fall 2014": 2,
-  "Spring 2015": 3,
-  "Fall 2015": 4,
-  "Spring 2016": 5,
-  "Fall 2016": 6,
-  "Spring 2017": 7,
-  "Fall 2017": 8,
-  "Spring 2018": 9,
-  "Fall 2018": 10,
-  "Spring 2019": 11,
-  "Summer 2019": 12,
-  "Fall 2019": 13
-}
-
-
 class Projects extends React.Component {
 
   state = { 
@@ -39,6 +22,7 @@ class Projects extends React.Component {
     filterDropdownOpen: false,
     termDropdownOpen: false,
     selectedProject: null,
+    termFilter: null,
   }
 
   fetchWithTimeout = (url, options, timeout = 3000) => {
@@ -56,66 +40,31 @@ class Projects extends React.Component {
 
 
   componentDidMount() {
-    // this.fetchWithTimeout('http://10.171.204.211/projects/', {}, 3000)
-    //   .then(res => res.json())
-    //   .then(json => {
-    //     console.log(json);
-    //     this.setState( { isLoaded: true, projects: json.results, })
-    //   })
-    //   .catch(err => {
-    //     console.log("looks like the backend is being worked on");
-        this.setState({ isLoaded: true,
-                        projects: [
-                          { ProjectName: "Super Mario",
-                            Term: "Spring",
-                            Year:"1996",
-                            GroupMembers: "Mario, Luigi, Toad, Princess Peach, ShyGuy"
-                          },
-                          { ProjectName: "Bernie",
-                            Term: "Fall",
-                            Year: "2020",
-                            GroupMembers: "Bernie Sanders, Jane O'Meara Sanders, James McDowell, John Freeman, Sabrina America"
-                          },
-                          { ProjectName: "Remus' Big Adventure",
-                            Term: "Fall",
-                            Year: "2017",
-                            GroupMembers: "Remus Lupin, Big Black, Meow Meow, Gato Dali, Fat Kitty"
-                          },
-                          { ProjectName: "VIBA",
-                            Term: "Fall",
-                            Year: "2017",
-                            GroupMembers: "Jamhson Boliva, Melissa Gramajo, DaQueshia Irvin, Jesus Menacho"
-                          },
-                          { ProjectName: "Autonomous Drone",
-                            Term: "Fall",
-                            Year: "2017",
-                            GroupMembers: "Marco van Hilst, Ryan Beasley, Daniel Belalcazar, Matthew Taubler"
-                          },
-                          { ProjectName: "Tabletop Gaming Companion",
-                            Term: "Fall",
-                            Year: "2017",
-                            GroupMembers: "Michael Garro, Jeremy Kramer, Andrew Maida, Austin Shipley"
-                          },
-                          { ProjectName: "Northrop Microgravity (Green Team)",
-                            Term: "Fall",
-                            Year: "2017",
-                            GroupMembers: "Joseph Freeman, Allen Shearin, StillNo ThirdPerson"
-                          }
-                      ] 
-                });
-      //});
+    this.fetchWithTimeout('http://10.171.204.211/GetCMSProjects/', {}, 3000)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        this.setState( { isLoaded: true, projects: json.project_list, })
+      })
+      .catch(err => {
+        console.log("looks like the backend is being worked on");
+      });
   }
 
   updateSearchFilter = evt => this.setState({searchFilter: evt.target.value});
 
+  createTermDropdownItem(term, year) {
+    var str = term + " " + year;
+    return <DropdownItem onClick={() => this.setState({termFilter: str})} active={this.state.termFilter === str}>{str}</DropdownItem>;
+  }
 
   render() {
 
     if (this.state.selectedProject) {
-      return <Project project={this.state.selectedProject}> </Project>;
+      return <Redirect to={'/projects/' + this.state.selectedProject.project_id} push />;
     }
 
-    let { isLoaded, projects, searchFilter, searchFilterMode } = this.state;
+    let { isLoaded, projects, searchFilter, searchFilterMode, termFilter } = this.state;
 
     let filterString = "";
 
@@ -130,32 +79,33 @@ class Projects extends React.Component {
 
     let projectList = <></>;
 
+    let groupContainsMemberNamed = (project, partialName) => {
+      return project.group_members.filter(member => {
+        return (member.first_name.toLowerCase().includes(partialName.toLowerCase())
+                || member.last_name.toLowerCase().includes(partialName.toLowerCase()))
+      }).length > 0;
+    }
+
 
    let createRowForTable = (project, index) =>
-      <>
         <tr key={index} onClick={() => this.setState({selectedProject: project})}>
           <td>
-            {project.ProjectName}
+            {project.project_name}
           </td>
           <td>
-            {project.GroupMembers}
+            {project.group_members.map(item => item.first_name + " " + item.last_name).join(', ')}
           </td>
-          <td xs="2" className="text-right">
-            {project.Term} {project.Year}
-          </td>
-        </tr>
-      </>;
+        </tr>;
 
 
     if (searchFilter) {
       if (searchFilterMode === SearchFilterMode.ProjectName)
-        projects = projects.filter(project => project.ProjectName.toLowerCase().includes(searchFilter.toLowerCase()));
+        projects = projects.filter(project => project.project_name.toLowerCase().includes(searchFilter.toLowerCase()));
       else if (searchFilterMode === SearchFilterMode.GroupMembers)
-        projects = projects.filter(project => project.GroupMembers.toLowerCase().includes(searchFilter.toLowerCase()));
+        projects = projects.filter(project => (groupContainsMemberNamed(project, searchFilter)));
       else if (searchFilterMode === SearchFilterMode.All)
-        projects = projects.filter(project => project.ProjectName.toLowerCase().includes(searchFilter.toLowerCase())
-                                              || project.GroupMembers.toLowerCase().includes(searchFilter.toLowerCase()));
-
+        projects = projects.filter(project => project.project_name.toLowerCase().includes(searchFilter.toLowerCase())
+                                              || groupContainsMemberNamed(project, searchFilter));
     }
     
     if (isLoaded) {
@@ -165,7 +115,6 @@ class Projects extends React.Component {
               <tr>
                 <th>Project Name</th>
                 <th>Group Members</th>
-                <th>Term</th>
               </tr>
             </thead>
 
@@ -198,7 +147,7 @@ class Projects extends React.Component {
                 Term: 
               </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>Spring 2019</DropdownItem>
+                  <DropdownItem onClick={() => this.setState({termFilter: "Spring 2019"})} active={termFilter === "Spring 2019"}>Spring 2019</DropdownItem>
                   <DropdownItem>Fall 2018</DropdownItem>
                   <DropdownItem>Spring 2018</DropdownItem>
                   <DropdownItem>2016</DropdownItem>
