@@ -16,6 +16,7 @@ const carouselImages = [
       src: '../images/showcase2.jpg',
       altText: 'Limbitless 2D/3D Arm Tracking',
       header: 'Limbitless 2D/3D Arm Tracking',
+      caption: '',
     },
     {
       src: '../images/showcase3.jpg',

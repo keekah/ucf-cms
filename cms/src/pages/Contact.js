@@ -78,7 +78,7 @@ class Contact extends React.Component {
 
             Dr. Heinrich was an Assistant Professor in ECE at Cornell University (1998-2002) and a co-founder of its Computer Systems Laboratory. He received the Cornell IEEE Teacher of the Year Award (1999) and a College of Engineering Teaching Award (2001). He was also the co-founder and Chief Architect of Flashbase, Inc. (1998-2000, acquired by DoubleClick in May 2000) specializing in automated sweepstakes and database-backed forms and tools for customer acquisition.<br /><br />
 
-            Dr. Heinrich joined UCF CS in 2002 as an Associate Professor, founding its Computer Systems Lab. He became Director of the School of Computer Science in 2005 and after a merger with ECE, served as Associate Director of the School of EECS at UCF until 2007. From 2004-2011 he was also the co-founder and CTO of Phanfare, Inc., a premium online photo and video hosting solution. Phanfare was acquired by Carbonite in August 2011.<br /><br />
+            Dr. Heinrich joined UCF CS in 2002 as an Associate Professor, founding its Computer Systems Lab. He became Director of the School of Computer Science in 2005 and after a merger with ECE, served as Associate Director of the School of EECS at UCF until 2007. From 2004-2011 he was also the co-founder and CTO of Phanfare, Inc., a premium online photo and video hosting solution. Phanfare was acquired by Carbonite in August 2011. As of September 2019, Dr. Heinrich assumes the role of Undergraduate Coordinator for Computer Science and Information Technology in addition to his role as Computer Science Senior Design Coordinator.<br /><br />
 
             Dr. Heinrich is the recipient of an NSF Graduate Fellowship, IBM T.J. Watson Scholarship, General Motors Scholarship, an NSF CAREER Award supporting novel research in data-intensive systems, and an IBM Faculty Award (2004). His scholarly publications have been cited more than 1600 times. He is a Senior Member of the IEEE and a regular member of the ACM. He is a member of Phi Beta Kappa, Tau Beta Pi, and Eta Kappa Nu, and is the faculty advisor for the UCF Geocaching Club.<br /><br /></p>
           </TabPane>
@@ -108,7 +108,7 @@ class Contact extends React.Component {
 
             <br />
             <img src="../images/leinecker.png" alt="Dr. Heinrich with a tortoise" id="heinrich"></img><br /><br />
-            <p>Dr. Leinecker is a seasoned software engineer with many prestigious accomplishments and positions. In addition to his skills as an enterprise-level software architect and engineer, he writes, consults, and serves as an industry expert in many areas. His expertise spans the following skill sets:
+            <p>Dr. Leinecker is a seasoned software engineer with many prestigious accomplishments and positions. In addition to his skills as an enterprise-level software architect and engineer, he writes, consults, and serves as an industry expert in many areas. His expertise spans the following skill sets:</p>
             <ul>
               <li>Strong language skills: Intel assembly, C++, C#, and Java</li>
               <li>Digital imaging: image processing and computer vision</li>
@@ -117,7 +117,7 @@ class Contact extends React.Component {
               <li>Supporting technologies: SQL, COM+, HTML, ASP.NET</li>
             </ul>
 
-            Dr. Leinecker's previous positions include Senior Programmer at Capstone, Senior Software Engineer at MCI, Senior Software Engineer at Landmark Communications, and Chief Technology Officer at Strategic Annotation. Duties included high-level software design, programming, staff management, and interaction with C-Level executives.<br /><br />
+            <p>Dr. Leinecker's previous positions include Senior Programmer at Capstone, Senior Software Engineer at MCI, Senior Software Engineer at Landmark Communications, and Chief Technology Officer at Strategic Annotation. Duties included high-level software design, programming, staff management, and interaction with C-Level executives.<br /><br />
 
             The apex of Dr. Leinecker's education is a Ph.D. in Information Technology. His dissertation covered a new approach to reducing data entropy which increases the ratio of data compression, thus reducing payload sizes. This experience in the academic world allows him to be both a practitioner and an academic. In addition to the mountains of incredible software that he has created, he has written hundreds of print articles, 23 technical books, and dozens of online articles. With his fabulous track record, publishers seek him out to tackle the most important assignments. As a member of Mensa, Dr. Leinecker meets interesting and challenging people. These connections allow him to remain steeped in contemporary thought. This contributes immensely to his ability to apply these paradigms to software engineering.<br /><br />
             

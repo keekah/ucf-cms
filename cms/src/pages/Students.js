@@ -78,7 +78,7 @@ class Students extends React.Component {
       We ask that all students put their project work on the <a href="https://github.com/ucfcs">University of Central Florida Department of Computer Science GitHub repository</a> so that teaching assistants, professor, and staff can help with the code and review it as necessary. To gain access, please email Dr. Heinrich with your current course (COP 4934 or COP 4935) and the GitHub usernames or associated emails of your team members. You will then be added to the department resources, where you can create your private or public repos under UCFCS.<br /><br />
 
       <div className="text-center">
-        <Button color="secondary" href="/submissions">Submit Documents</Button>
+        <Button color="warning" href="/submissions">Submit Documents</Button>
       </div>
     </Page>
 

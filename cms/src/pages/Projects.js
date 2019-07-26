@@ -3,7 +3,6 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Form, Input, Row,
 import { Redirect } from 'react-router-dom';
 
 import Page from '../components/Page';
-import Project from '../pages/Project';
 
 const SearchFilterMode = {
   All: 1,
@@ -23,6 +22,7 @@ class Projects extends React.Component {
     termDropdownOpen: false,
     selectedProject: null,
     termFilter: null,
+    termList: [],
   }
 
   fetchWithTimeout = (url, options, timeout = 3000) => {
@@ -43,8 +43,42 @@ class Projects extends React.Component {
     this.fetchWithTimeout('http://10.171.204.211/GetCMSProjects/', {}, 3000)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
-        this.setState( { isLoaded: true, projects: json.project_list, })
+        let termList = json.project_list.map(element => ({term: element.term, year: element.year}));
+        let uniqueTerms = {};
+        termList.forEach(term => {
+          var key = term.year.toString();
+          if (term.term.toLowerCase() === "fall")
+          {
+            key += "c";
+          }
+          if (term.term.toLowerCase() === "summer")
+          {
+            key += "b";
+          }
+          if (term.term.toLowerCase() === "spring")
+          {
+            key += "a";
+          }
+          uniqueTerms[key] = term;
+        });
+        let sortedArray = [];
+        for (var key in uniqueTerms){
+          sortedArray.push(key);
+        }
+        sortedArray.sort();
+        sortedArray.reverse();
+
+        sortedArray = sortedArray.map(key => {
+          let term = uniqueTerms[key];
+          return term.term + " " + term.year;
+        });
+
+        let currentTerm = json.currentTerm + " " + json.currentYear;
+        sortedArray.forEach(element => {
+          if (element.toLowerCase() === currentTerm.toLowerCase())
+            currentTerm = element;
+        });
+        this.setState( { isLoaded: true, projects: json.project_list, termList: sortedArray, termFilter: currentTerm});
       })
       .catch(err => {
         console.log("looks like the backend is being worked on");
@@ -53,9 +87,8 @@ class Projects extends React.Component {
 
   updateSearchFilter = evt => this.setState({searchFilter: evt.target.value});
 
-  createTermDropdownItem(term, year) {
-    var str = term + " " + year;
-    return <DropdownItem onClick={() => this.setState({termFilter: str})} active={this.state.termFilter === str}>{str}</DropdownItem>;
+  createTermDropdownItem(str) {
+    return <DropdownItem key={str} onClick={() => this.setState({termFilter: str})} active={this.state.termFilter.toLowerCase() === str.toLowerCase()}>{str}</DropdownItem>;
   }
 
   render() {
@@ -103,10 +136,15 @@ class Projects extends React.Component {
         projects = projects.filter(project => project.project_name.toLowerCase().includes(searchFilter.toLowerCase()));
       else if (searchFilterMode === SearchFilterMode.GroupMembers)
         projects = projects.filter(project => (groupContainsMemberNamed(project, searchFilter)));
+      else if (searchFilterMode === SearchFilterMode.Keyword)
+        projects = projects.filter(project => project.keywords.toLowerCase().includes(searchFilter.toLowerCase()));
       else if (searchFilterMode === SearchFilterMode.All)
         projects = projects.filter(project => project.project_name.toLowerCase().includes(searchFilter.toLowerCase())
-                                              || groupContainsMemberNamed(project, searchFilter));
+                                              || groupContainsMemberNamed(project, searchFilter)
+                                              || project.keywords.toLowerCase().includes(searchFilter.toLowerCase()));
     }
+
+    projects = projects.filter(project => (project.term + " " + project.year).toLowerCase() === termFilter.toLowerCase());
     
     if (isLoaded) {
       projectList = (
@@ -127,8 +165,10 @@ class Projects extends React.Component {
 
     return <>
       <Page>
-        <Row>
-          <h2 className="mb-4">Projects</h2> 
+        <Row >
+          <h2>Projects: {this.state.termFilter}</h2> 
+        </Row>
+        <Row className="mb-4">
           <Form className="ml-auto" inline>
             <Input name="search" placeholder="Search projects" value={this.state.searchFilter} onChange={evt => this.updateSearchFilter(evt)} />
             <Dropdown isOpen={this.state.filterDropdownOpen} toggle={this.toggleFilterDropdown}>
@@ -144,13 +184,12 @@ class Projects extends React.Component {
             </Dropdown>
             <Dropdown isOpen={this.state.termDropdownOpen} toggle={this.toggleTermDropdown}>
               <DropdownToggle caret id="project-search-button" >
-                Term: 
+                Term: <b>{termFilter}</b>
               </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem onClick={() => this.setState({termFilter: "Spring 2019"})} active={termFilter === "Spring 2019"}>Spring 2019</DropdownItem>
-                  <DropdownItem>Fall 2018</DropdownItem>
-                  <DropdownItem>Spring 2018</DropdownItem>
-                  <DropdownItem>2016</DropdownItem>
+                  {
+                    this.state.termList.map(element => this.createTermDropdownItem(element))
+                  }
                 </DropdownMenu>
             </Dropdown>
           </Form>
