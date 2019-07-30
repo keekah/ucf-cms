@@ -1,0 +1,296 @@
+118 out of 202 students got their first choice.
+34 out of 202 students got their second choice.
+19 out of 202 students got their third choice.
+mmer: 1 Fall: 1
+Daniel Schiff  1 Summer: 1 Fall: 1
+Jacob Knudson  1 Summer: 1 Fall: 1
+
+Name: Color ID: 2  Number of Students: 5  Priority: 0
+Daniel Keller  1 Summer: 1 Fall: 1
+Conner Kaye  1 Summer: 1 Fall: 1
+Gianlouie Molinary  2 Summer: 1 Fall: 1
+Andrew Corbeil  3 Summer: 1 Fall: 1
+Michael Ramirez  3 Summer: 1 Fall: 1
+
+Name: Data ID: 3  Number of Students: 5  Priority: 0
+Jay Brown  1 Summer: 1 Fall: 1
+Jackson Boyd  2 Summer: 1 Fall: 1
+Isaac Ehlers  1 Summer: 1 Fall: 1
+Claudie Milien  1 Summer: 1 Fall: 1
+Ryan Beck  2 Summer: 1 Fall: 1
+
+Name: Real ID: 4  Number of Students: 5  Priority: 0
+Samantha Morris  1 Summer: 1 Fall: 1
+Brigit Murtaugh  1 Summer: 1 Fall: 1
+Andres Perez  1 Summer: 1 Fall: 1
+Peter Castro  1 Summer: 1 Fall: 1
+Areeb Vaid  4 Summer: 1 Fall: 1
+
+Name: ELLE ID: 5  Number of Students: 5  Priority: 0
+Yashodan Sewnath  2 Summer: 1 Fall: 1
+Christopher Rodbourne  1 Summer: 1 Fall: 1
+Kalonte Jackson-Tate  5 Summer: 1 Fall: 1
+Michael Braddy  5 Summer: 1 Fall: 1
+Eugene Rainier Lucino  1 Summer: 1 Fall: 1
+
+Name: SEE ID: 6  Number of Students: 5  Priority: 0
+John Sermarini  1 Summer: 1 Fall: 1
+Christopher Taliaferro  1 Summer: 1 Fall: 1
+Tyler Duncan  1 Summer: 1 Fall: 1
+Connor Smith  1 Summer: 1 Fall: 1
+Alexander Matasa  1 Summer: 1 Fall: 1
+
+Name: E-RASSOR ID: 7  Number of Students: 5  Priority: 0
+Juan Zambrano  1 Summer: 1 Fall: 1
+Sean Rapp  1 Summer: 1 Fall: 1
+Alvin Kangoo  1 Summer: 1 Fall: 1
+Camilo Lozano  1 Summer: 1 Fall: 1
+Harrison Black  1 Summer: 1 Fall: 1
+
+Name: Arcade ID: 8  Number of Students: 5  Priority: 0
+Austin Bryant  1 Summer: 1 Fall: 1
+Scott Kramarz  2 Summer: 1 Fall: 1
+Armand Alvarez  2 Summer: 1 Fall: 1
+Bennett Thompson  3 Summer: 1 Fall: 1
+Troy Houston  4 Summer: 1 Fall: 1
+
+Name: Agile ID: 9  Number of Students: 5  Priority: 0
+Kyle Capehart  1 Summer: 1 Fall: 1
+Umadatt Tiwari  1 Summer: 1 Fall: 1
+Lee Wildes  1 Summer: 1 Fall: 1
+Muhammad Ahmed  2 Summer: 1 Fall: 1
+Sasuke Hirano  1 Summer: 1 Fall: 1
+
+Name: Sound ID: 10  Number of Students: 5  Priority: 0
+Ty Abbott  1 Summer: 1 Fall: 1
+Keith Guske  1 Summer: 1 Fall: 1
+Joshua Pollmann  1 Summer: 1 Fall: 1
+Hugens Ulysse  3 Summer: 1 Fall: 1
+Ot Gabaldon Torrents  1 Summer: 1 Fall: 1
+
+Name: 3D Arm ID: 11  Number of Students: 5  Priority: 0
+Abdulfattah Isleem  1 Summer: 1 Fall: 1
+Charlene Juvida  1 Summer: 1 Fall: 1
+Huy Dang  1 Summer: 1 Fall: 1
+Mark Poulsen  1 Summer: 1 Fall: 1
+Jacob Sage  2 Summer: 1 Fall: 1
+
+Name: AUVSI ID: 12  Number of Students: 5  Priority: 0
+Joshua Smyrski  3 Summer: 1 Fall: 1
+Pablo Beltran  6 Summer: 1 Fall: 1
+Jonathan Navas  6 Summer: 1 Fall: 1
+Bradley Coles  7 Summer: 1 Fall: 1
+Chandler Douglas  20 Summer: 1 Fall: 1
+
+Name: Blockchain ID: 13  Number of Students: 5  Priority: 0
+Elizabeth Briley  1 Summer: 1 Fall: 1
+Jennifer Belvin  1 Summer: 1 Fall: 1
+Christopher Nastovski  1 Summer: 1 Fall: 1
+David Taylor  2 Summer: 1 Fall: 1
+Ole Nissen  1 Summer: 1 Fall: 1
+
+Name: Slavery ID: 14  Number of Students: 5  Priority: 0
+Nathan Tackett  1 Summer: 1 Fall: 1
+Yuri Rubio  2 Summer: 1 Fall: 1
+Elizabeth Maspoch  2 Summer: 1 Fall: 1
+Michael Owens  6 Summer: 1 Fall: 1
+Sara Young  2 Summer: 1 Fall: 1
+
+Name: Starcraft ID: 15  Number of Students: 5  Priority: 0
+Benjamin Hebert  1 Summer: 1 Fall: 1
+Ming Jiang  1 Summer: 1 Fall: 1
+Matthew Nipper  1 Summer: 1 Fall: 1
+Tyler Clark  1 Summer: 1 Fall: 1
+Alexander Coleman  1 Summer: 1 Fall: 1
+
+Name: Voice ID: 16  Number of Students: 5  Priority: 0
+Philip Lang  1 Summer: 1 Fall: 1
+Haerunnisa Dewindita  1 Summer: 1 Fall: 1
+Matthew Alvarez  2 Summer: 1 Fall: 1
+Jonathan Guilbe  2 Summer: 1 Fall: 1
+Taylor Knight  1 Summer: 1 Fall: 1
+
+Name: Recommend ID: 17  Number of Students: 5  Priority: 0
+Matthew Britzius  1 Summer: 1 Fall: 1
+Eloy Gonzalez  1 Summer: 1 Fall: 1
+Brandon Barkes  1 Summer: 1 Fall: 1
+Andrew Spooner  1 Summer: 1 Fall: 1
+Connor Black  1 Summer: 1 Fall: 1
+
+Name: Boat ID: 18  Number of Students: 5  Priority: 0
+Kiara Crawford  1 Summer: 1 Fall: 1
+Brandon Haynes  1 Summer: 1 Fall: 1
+Warren Oliver  1 Summer: 1 Fall: 1
+Jordan Martin  2 Summer: 1 Fall: 1
+John Mirschel  3 Summer: 1 Fall: 1
+
+Name: Task ID: 19  Number of Students: 5  Priority: 0
+Sopheap Sok  1 Summer: 1 Fall: 1
+Deepak Gunturu  2 Summer: 1 Fall: 1
+Samuel Lewis  4 Summer: 1 Fall: 1
+Tyler Teixeira  3 Summer: 1 Fall: 1
+Ronald Marrero  8 Summer: 1 Fall: 1
+
+Name: AVAST ID: 20  Number of Students: 5  Priority: 0
+Xuehui Chen  2 Summer: 1 Fall: 1
+Matthew Fraley  3 Summer: 1 Fall: 1
+Anthony Rissi  2 Summer: 1 Fall: 1
+Philip Leong  1 Summer: 1 Fall: 1
+Cameron Taylor  5 Summer: 1 Fall: 1
+
+Name: E-GOAT ID: 21  Number of Students: 5  Priority: 0
+Brian Huang  3 Summer: 1 Fall: 1
+Carson Miller  3 Summer: 1 Fall: 1
+Matthew Drabek  5 Summer: 1 Fall: 1
+Imahd Khan  2 Summer: 1 Fall: 1
+Jordan Zhu  5 Summer: 1 Fall: 1
+
+Name: ARPD ID: 22  Number of Students: 5  Priority: 0
+Joshua Yandell  1 Summer: 1 Fall: 1
+Alexander Acevedo  1 Summer: 1 Fall: 1
+Daniel Ohana  5 Summer: 1 Fall: 1
+Joseph Peaden  1 Summer: 1 Fall: 1
+Kate Barr  6 Summer: 1 Fall: 1
+
+Name: FPL Drone ID: 23  Number of Students: 0  Priority: -1
+
+Name: Image ML ID: 24  Number of Students: 0  Priority: -1
+
+Name: Beach ID: 25  Number of Students: 5  Priority: 0
+John Balbuza  1 Summer: 1 Fall: 1
+Tiger Sachse  3 Summer: 1 Fall: 1
+Austin Pelletier  5 Summer: 1 Fall: 1
+Jonathan Ponader  2 Summer: 1 Fall: 1
+Yitzak Hernandez  2 Summer: 1 Fall: 1
+
+Name: Gravity ID: 26  Number of Students: 5  Priority: 0
+Alexander Hunt  1 Summer: 1 Fall: 1
+Jacob Chaulk  3 Summer: 1 Fall: 1
+Christian Phillips  3 Summer: 1 Fall: 1
+Michael Armijo  3 Summer: 1 Fall: 1
+Thomas Cleary  2 Summer: 1 Fall: 1
+
+Name: Parking ID: 27  Number of Students: 5  Priority: 0
+Alexander Dossantos  1 Summer: 1 Fall: 1
+Steven Chen  1 Summer: 1 Fall: 1
+Collin Speight  1 Summer: 1 Fall: 1
+Meredith Pyrich  1 Summer: 1 Fall: 1
+Sean Lee  1 Summer: 1 Fall: 1
+
+Name: Boost ID: 28  Number of Students: 5  Priority: 0
+Christofer Padilla  1 Summer: 1 Fall: 1
+Leonardo Araque  2 Summer: 1 Fall: 1
+Jessica Wingert  5 Summer: 1 Fall: 1
+Brandon Orooji  4 Summer: 1 Fall: 1
+Richard Snyder  1 Summer: 1 Fall: 1
+
+Name: Carebit ID: 29  Number of Students: 5  Priority: 0
+Benjamin Faria  1 Summer: 1 Fall: 1
+Katherine Rosenfeld  2 Summer: 1 Fall: 1
+Guensly Louis  1 Summer: 1 Fall: 1
+Zachary Shea  1 Summer: 1 Fall: 1
+Jacob Kerner  2 Summer: 1 Fall: 1
+
+Name: CAP ID: 30  Number of Students: 5  Priority: 0
+Angel Chacon  1 Summer: 1 Fall: 1
+Hunter Hayes  4 Summer: 1 Fall: 1
+Henry Richardson  6 Summer: 1 Fall: 1
+Ricardo Pulido  2 Summer: 1 Fall: 1
+Adam Bird  4 Summer: 1 Fall: 1
+
+Name: Sherlock ID: 31  Number of Students: 5  Priority: 0
+Patrick Thompson  2 Summer: 1 Fall: 1
+Nathan Dabu  2 Summer: 1 Fall: 1
+John Edward Muchovej  4 Summer: 1 Fall: 1
+Ian Harvey  7 Summer: 1 Fall: 1
+Brita Ramsay  3 Summer: 1 Fall: 1
+
+Name: Reality ID: 32  Number of Students: 5  Priority: 0
+Manuel Govea Malandrino  1 Summer: 1 Fall: 1
+Kayden Wilkinson  1 Summer: 1 Fall: 1
+Lucas Gonzalez  2 Summer: 1 Fall: 1
+Jonathan Havener  1 Summer: 1 Fall: 1
+Jonathan White  1 Summer: 1 Fall: 1
+
+Name: Knights ID: 33  Number of Students: 5  Priority: 0
+Aaron Varkonyi  1 Summer: 1 Fall: 1
+Bailey Snyder  2 Summer: 1 Fall: 1
+Nicholas Whitlock  1 Summer: 1 Fall: 1
+Stephen Rigdon  2 Summer: 1 Fall: 1
+Bailey Muckel  1 Summer: 1 Fall: 1
+
+Name: Athlete ID: 34  Number of Students: 5  Priority: 0
+Amaan Chowdhury  1 Summer: 1 Fall: 1
+Richard Tsai  1 Summer: 1 Fall: 1
+Bryant Gray  1 Summer: 1 Fall: 1
+Tuan Pham  3 Summer: 1 Fall: 1
+Mark Kenneth Alano  2 Summer: 1 Fall: 1
+
+Name: Forage ID: 35  Number of Students: 5  Priority: 0
+David Palumbo  2 Summer: 1 Fall: 1
+Cole Silvernail  3 Summer: 1 Fall: 1
+Christian Whitted  7 Summer: 1 Fall: 1
+Justin Powell  5 Summer: 1 Fall: 1
+Alexander Kyprianou  5 Summer: 1 Fall: 1
+
+Name: D&D ID: 36  Number of Students: 5  Priority: 0
+Gaelen Dignan  1 Summer: 1 Fall: 1
+Manuel Trujillo-Silva  1 Summer: 1 Fall: 1
+Jarrett Wendt  1 Summer: 1 Fall: 1
+Christian Dudukovich  1 Summer: 1 Fall: 1
+Samuel Belcastro  1 Summer: 1 Fall: 1
+
+Name: Tinder ID: 37  Number of Students: 5  Priority: 0
+Kaleb Yangson  1 Summer: 1 Fall: 1
+Avi Rosenblum  1 Summer: 1 Fall: 1
+Christopher Perkins  1 Summer: 1 Fall: 1
+Jared Johansson  3 Summer: 1 Fall: 1
+Haniel Diaz  4 Summer: 1 Fall: 1
+
+Name: Microscope ID: 38  Number of Students: 0  Priority: -1
+
+Name: Laser ID: 39  Number of Students: 0  Priority: -1
+
+Name: Tour ID: 40  Number of Students: 5  Priority: 0
+Luke Myers  1 Summer: 1 Fall: 1
+Andrew Emery  1 Summer: 1 Fall: 1
+Philip Rodriguez  2 Summer: 1 Fall: 1
+William Cromar  1 Summer: 1 Fall: 1
+Noah Al-Shihabi  1 Summer: 1 Fall: 1
+
+Name: Turbo+ ID: 41  Number of Students: 0  Priority: -1
+
+Name: Vacay ID: 42  Number of Students: 0  Priority: -1
+
+Name: Outfitter ID: 43  Number of Students: 5  Priority: 0
+Brandon Gotay  1 Summer: 1 Fall: 1
+Daquaris Chadwick  1 Summer: 1 Fall: 1
+Susan Long  1 Summer: 1 Fall: 1
+Kyle Martinez  1 Summer: 1 Fall: 1
+Devin Barron  5 Summer: 1 Fall: 1
+
+Name: Sheet ID: 44  Number of Students: 5  Priority: 0
+Piero Castillo  1 Summer: 1 Fall: 1
+Kaycee Peeples  1 Summer: 1 Fall: 1
+Fazle Akbar  1 Summer: 1 Fall: 1
+Jonathan Lai  1 Summer: 1 Fall: 1
+Jonathan Barlatier  3 Summer: 1 Fall: 1
+
+Name: Vegan ID: 45  Number of Students: 5  Priority: 0
+Rachael Sera  1 Summer: 1 Fall: 1
+Jacquelyn Law  1 Summer: 1 Fall: 1
+Bailey Brooks  1 Summer: 1 Fall: 1
+Huong Dang  1 Summer: 1 Fall: 1
+Lorraine Yerger  1 Summer: 1 Fall: 1
+
+Name: Indoor Nav
+ ID: 46  Number of Students: 5  Priority: 0
+David Wecke  1 Summer: 1 Fall: 1
+Derya Hancock  1 Summer: 1 Fall: 1
+Kevin Santana  1 Summer: 1 Fall: 1
+Richard Zarth  1 Summer: 1 Fall: 1
+Carlos Membreno  1 Summer: 1 Fall: 1
+
+Name: Error ID: 0  Number of Students: 2  Priority: 0
+Tyler Cudnohufsky  20 Summer: 1 Fall: 1
+Derek Goodwin  20 Summer: 1 Fall: 1

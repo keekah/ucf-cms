@@ -25,12 +25,51 @@ from rest_framework_simplejwt.views import (
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'projects', views.CmsViewSet, base_name=Project)
 
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(r'api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path(r'api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('SubmitAssignmentOne/', views.SubmitAssignmentOne, name='SubmitAssignmentOne')
+    path('SubmitAssignmentOne/', views.SubmitAssignmentOne, name='SubmitAssignmentOne'),
+    path('RunAlg/', views.RunAlg, name='RunAlg'),
+    path('CreateUser/', views.CreateUser, name='CreateUser'),
+    path('LoginUser/', views.LoginUser, name='LoginUser'),
+    path('TestToken/', views.testToken, name='TestToken'),
+    path('GetStudents/', views.GetStudents, name='GetStudents'),
+    path('GetStudentByID/', views.GetStudentByID, name='GetStudentByID'),
+    path('DeleteStudent/', views.DeleteStudent, name='DeleteStudent'),
+    path('GetSchedule/', views.GetSchedule, name='GetSchedule'),
+    path('SubmitProject/', views.SubmitProject, name='SubmitProject'),
+    path('GetProjects/', views.GetProjects, name='GetProjects'),
+    path('UploadStudentResume/', views.UploadStudentResume, name='UploadStudentResume'),
+    path('DownloadStudentResume/', views.DownloadStudentResume, name='DownloadStudentResume'),
+    path('GetSchedulerRunVersions/', views.GetSchedulerRunVersions, name='GetSchedulerRunVersions'),
+    path('LoadPreviousRunVersion/', views.LoadPreviousRunVersion, name='LoadRunVersion'),
+    path('GetStudentsMissingAssignmentOne/', views.GetStudentsMissingAssignmentOne, name='GetStudentsMissingAssignmentOne'),
+    path('EditProject/', views.EditProject, name='EditProject'),
+    path('Logout/', views.Logout, name='Logout'),
+    path('SubmitStudentRoster/', views.SubmitStudentRoster, name='SubmitStudentRoster'),
+    path('DownloadCMSProjectResource/', views.DownloadCMSProjectResource, name='DownloadCMSProjectResource'),
+    path('CreateCMSProject/', views.CreateCmsProject, name='CreateCMSProject'),
+    path('CreateCMSMember/', views.CreateCMSMember, name='CreateCMSMember'),
+    path('GetCMSProjects/', views.GetCMSProjects, name='GetCMSProjects'),
+    path('UploadCMSDesignDoc/', views.UploadCMSDesignDoc, name='UploadCMSDesignDoc'),
+    path('UploadCMSFinalDoc/', views.UploadCMSFinalDoc, name='UploadCMSFinalDoc'),
+    path('UploadCMSPresentation/', views.UploadCMSPresentation, name='UploadCMSPresentation'),
+    path('UploadCMSConferencePaper/', views.UploadCMSConferencePaper, name='UploadCMSConferencePaper'),
+    path('UploadCMSMemberPhoto/', views.UploadCMSMemberPhoto, name='UploadCMSMemberPhoto'),
+    path('DownloadCMSMemberResource/', views.DownloadCMSMemberResource, name='DownloadCMSMemberResource'),
+    path('CacheAlg/', views.CacheAlg, name='CacheAlg'),
+    path('GetGroups/', views.GetGroups, name='GetGroups'),
+    path('FinalizeScheduleVersion/', views.FinalizeScheduleVersion, name='FinalizeScheduleVersion'),
+    path('ExportRunVersionCSV/', views.ExportRunVersionCSV, name='ExportRunVersionCSV'),
+    #saved for if old data ever needs to be loaded
+    path('UploadOldData/', views.UploadOldData, name='UploadOldData'),
+    path('GetInitialGridBuild/', views.GetInitialGridBuild, name='GetInitialGridBuild'),
+    path('UpdateCMSProject/', views.UpdateCMSProject, name='UpdateCMSProject'),
+    path('UpdateFullCMSProject/', views.UpdateFullCMSProject, name='UpdateFullCMSProject'),
+    path('DeleteCMSProject/', views.DeleteCMSProject, name='DeleteCMSProject'),
+    path('DeleteCMSMember/', views.DeleteCMSMember, name='DeleteCMSMember'),
 ]
+
