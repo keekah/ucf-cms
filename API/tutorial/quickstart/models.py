@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 
+#Year and Term are the year and term a project or student wishes to take SD2. CurrentYear and CurrentTerm are for datetime.now()
 
 class Project(models.Model):
     Sponsor = models.CharField(max_length=100)

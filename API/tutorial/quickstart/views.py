@@ -21,14 +21,9 @@ from io import TextIOWrapper
 #import names
 import random
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-
-class GroupViewSet(viewsets.ModelViewSet):
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-
+#Summary:Creates a new project for the Scheduler. Calling this after students have submitted assignment one is useless since they won't have a project ranking
+#Input: Check anything with data['{fieldName}']
+#Output: 200 on succ 400 on fail
 @csrf_exempt
 def SubmitProject(request):
     try:
@@ -63,7 +58,9 @@ def SubmitProject(request):
     except Exception as e:
 
         return HttpResponse(status=400, content=json.dumps(str(e)))
-
+#Summary: Gets projects for the sent current year or term. This allows admin to get projects from any term or year.
+#Input: Check anything from data['{fieldName}']
+#Output: list of projects on succ 400 on fail
 @csrf_exempt
 def GetProjects(request):
     try:
@@ -95,6 +92,9 @@ def GetProjects(request):
 
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: Edits the project sent. you need to send all fields, even if they arent changed.
+#Input: check anything using data['{fieldName}']
+#Output: 200ok on succ 400 on fail
 @csrf_exempt
 def EditProject(request):
     try:
@@ -123,7 +123,9 @@ def EditProject(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
-
+#Summary: Submits assignment one for the sent student ID. I inially had ID cache'd from login, but the front-end would send a diffrent session ID on every call for some reason
+#Input: check anything using data['{fieldName}']
+#Output: 200ok on succ 400 on fail
 @csrf_exempt
 def SubmitAssignmentOne(request):
     try:
@@ -158,6 +160,10 @@ def SubmitAssignmentOne(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: Creates users from a list of emails. This function creates their unique password and initializes the user
+#Summary: This uses the mailing account made on gmail. Info is in the server.login()
+#Input: check anything using data['{fieldName}']
+#Output: 200ok on succ or 400 on fail
 @csrf_exempt
 def CreateUser(request):
     try:
@@ -189,6 +195,9 @@ def CreateUser(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: Sends an email using the sent mail server
+#Input: self explainitory
+#Output: True on succ False on fail
 def SendEmail(email, subject, body, server):
     try:
         msg = MIMEText(body)
@@ -202,6 +211,9 @@ def SendEmail(email, subject, body, server):
         print(str(e))
         return False
 
+#Summary: logs in the user sent
+#Input: check anything using data['{fieldName}']
+#Output: users details on succ 400 on fail
 @csrf_exempt
 def LoginUser(request):
     try:
@@ -246,6 +258,9 @@ def LoginUser(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: This is a test function. Use it to initialize any amount of projects and users. Good for testing. Takes foreeeeeeever to run if you add more than 50 students
+#Input: 
+#Output:
 @csrf_exempt
 def testToken(request):
     try:
@@ -318,7 +333,9 @@ def testToken(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
-
+#Summary: Runs the algorithm from the sent input. Also caches the pre alg data to be sent later if needed.
+#Input: check anything using data['{fieldName}']
+#Output: massive json list of all the projects and students
 @csrf_exempt
 def RunAlg(request):
     try:
@@ -352,19 +369,9 @@ def RunAlg(request):
             os.makedirs(listFileString)
         listFileString = listFileString + "/*"
         os.system(cmdString)
-        #if(os.path.exists("run.txt")):
-           # with open("run.txt", 'rb') as fh:
-                #response = HttpResponse(fh.read(), content_type="text/plain")
-                #response['Content-Disposition'] = 'inline; filename=run.txt'
-                #SaveAlg("run.txt")
         list_of_files = glob.glob(listFileString) # * means all if need specific format then *.csv
         latest_file = max(list_of_files, key=os.path.getctime)
         ret = ConvertAlgFileToJson(latest_file, sentYear, sentTerm)
-        #query = LoadedSchedulerRunVersion.objects.all()
-        #if(len(query) == 0):
-            #query2 = LoadedSchedulerRunVersion(Version=)
-        #else:
-            #query2 = LoadedSchedulerRunVersion.objects.get(id=query[0].id)
         request.session['CurrentScheduleVersion'] = ret
         return HttpResponse(status=200, content=ret)
     except Exception as e:
@@ -372,6 +379,9 @@ def RunAlg(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: caches the version so changes can be saved without running the alg. I dont think the frontend uses this even though it was requested by them -_-
+#Input: check anything using data['{fieldName}']
+#Output: 200 ok on succ 400 on fail
 @csrf_exempt
 def CacheAlg(request):
     try:
@@ -395,6 +405,9 @@ def CacheAlg(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: If a schedule exists already, send that. else build an inital grid and send that
+#Input: check anything using data['{fieldName}']
+#Output: massive json list of projects and students. May be assigned or unassigned based on when this is called
 @csrf_exempt
 def GetSchedule(request):
     try:
@@ -422,6 +435,9 @@ def GetSchedule(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: gets students with the sent current year and current term
+#Input: check anything using data['{fieldName}']
+#Output: list of students
 @csrf_exempt
 def GetStudents(request):
     try:
@@ -438,6 +454,9 @@ def GetStudents(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: deletes the selected student based on id
+#Input: check anything using data['{fieldName}']
+#Output: 200 or 400
 @csrf_exempt
 def DeleteStudent(request):
     try:
@@ -455,6 +474,9 @@ def DeleteStudent(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: This is for grabbing the details of a specific student. Used mostly by the grid
+#Input: check anything using data['{fieldName}']
+#Output: student details
 @csrf_exempt
 def GetStudentByID(request):
     try:
@@ -470,6 +492,9 @@ def GetStudentByID(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: self explains. Make sure you include enctype='multipart/form-data' in your header
+#Input: Get request with ID, and a file with the html id for it being 'file'
+#Output: 200 or 400
 @csrf_exempt
 def UploadStudentResume(request):
     try:
@@ -507,6 +532,9 @@ def UploadStudentResume(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: self explains
+#Input: check anything using data['{fieldName}']
+#Output: file for student ID
 @csrf_exempt
 def DownloadStudentResume(request):
     try:
@@ -529,6 +557,9 @@ def DownloadStudentResume(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: Returns a json representation of the current scheduler run directory. Good for navigating what is available
+#Input: check anything using data['{fieldName}']
+#Output: Returns a json representation of the current scheduler run directory.
 @csrf_exempt
 def GetSchedulerRunVersions(request):
     try:
@@ -562,6 +593,9 @@ def GetSchedulerRunVersions(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#Summary: Loads any run version based on the sent data
+#Input: check anything using data['{fieldName}']
+#Output: returns massive list of students and projects
 @csrf_exempt
 def LoadPreviousRunVersion(request):
     try:
@@ -584,6 +618,10 @@ def LoadPreviousRunVersion(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Returns all the student emails of those who have NOT done assignment one. Not used by the frontend.
+#Input: check anything using data['{fieldName}']
+#Output: All student emails who have not done assignment one
 @csrf_exempt
 def GetStudentsMissingAssignmentOne(request):
     try:
@@ -614,6 +652,10 @@ def GetStudentsMissingAssignmentOne(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: logs user out
+#Input: none
+#Output: 200 or 400
 @csrf_exempt
 def Logout(request):
     try:
@@ -622,6 +664,10 @@ def Logout(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: creates students just like CreateStudent, but does it via .csv
+#Input: file input of a .csv . Same .csv that is given by downloading the student roster on MyUCF
+#Output: 200 or 400
 @csrf_exempt
 def SubmitStudentRoster(request):
     try:
@@ -643,6 +689,10 @@ def SubmitStudentRoster(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Local function to send mass emails
+#Input: list of emails
+#Output: 
 def CreateUserLocal(emails):
     try:
         smtp_server = "smtp.gmail.com:587"
@@ -671,6 +721,10 @@ def CreateUserLocal(emails):
     except:
         return
 
+
+#Summary: Create a brand new project for the CMS
+#Input: check anything using data['{fieldName}']
+#Output: 200 with project id or 400
 @csrf_exempt
 def CreateCmsProject(request):
     try:
@@ -686,6 +740,10 @@ def CreateCmsProject(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Creates brand new cms member for cms
+#Input: check anything using data['{fieldName}']
+#Output: 200 with the member id or 400
 @csrf_exempt
 def CreateCMSMember(request):
     try:
@@ -704,6 +762,10 @@ def CreateCMSMember(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Gets all cms projects with the sent term and year
+#Input: none
+#Output: json of all projects on cms
 @csrf_exempt
 def GetCMSProjects(request):
     try:
@@ -750,6 +812,10 @@ def GetCMSProjects(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Upload design doc for sent project. Check to make sure you have 'enctype' header
+#Input: Get request with project id
+#Output: 200 ok or 400
 @csrf_exempt
 def UploadCMSDesignDoc(request):
     try:
@@ -784,6 +850,7 @@ def UploadCMSDesignDoc(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#same as above
 @csrf_exempt
 def UploadCMSFinalDoc(request):
     try:
@@ -819,6 +886,7 @@ def UploadCMSFinalDoc(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#same as above
 @csrf_exempt
 def UploadCMSPresentation(request):
     try:
@@ -853,6 +921,7 @@ def UploadCMSPresentation(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#same as above
 @csrf_exempt
 def UploadCMSConferencePaper(request):
     try:
@@ -887,6 +956,7 @@ def UploadCMSConferencePaper(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#same as above
 @csrf_exempt
 def UploadCMSMemberPhoto(request):
     try:
@@ -921,6 +991,10 @@ def UploadCMSMemberPhoto(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Downloads file for the project
+#Input: get request with project id and type of file
+#Output: file
 @csrf_exempt
 def DownloadCMSProjectResource(request):
     try:
@@ -947,6 +1021,7 @@ def DownloadCMSProjectResource(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+#same but for member
 @csrf_exempt
 def DownloadCMSMemberResource(request):
     try:
@@ -973,6 +1048,10 @@ def DownloadCMSMemberResource(request):
     except Exception as e:
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Get all groups for the most recent schedule run
+#Input: check anything using data['{fieldName}']
+#Output: returns list of projects, group members, and group nums
 @csrf_exempt
 def GetGroups(request):
     try:
@@ -1036,6 +1115,10 @@ def GetGroups(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Send all the final project groups and members to the cms. Possible legal issues according to stressau. I would remove this functionality unless heinrich says otherwise
+#Input: check anything using data['{fieldName}']
+#Output: 200 ok or 400
 @csrf_exempt
 def FinalizeScheduleVersion(request):
     try:
@@ -1081,6 +1164,10 @@ def FinalizeScheduleVersion(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: This is for uploading the scraped data for all the old projects and groups
+#Input: file
+#Output: 200ok 400
 @csrf_exempt 
 def UploadOldData(request):
     try:
@@ -1191,6 +1278,10 @@ def UploadOldData(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Exports the sent version name and term/year as a .csv , Not used by the front end
+#Input: check anything using data['{fieldName}']
+#Output: .csv file
 @csrf_exempt
 def ExportRunVersionCSV(request):
     try:
@@ -1251,6 +1342,10 @@ def ExportRunVersionCSV(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Gets the initial build of a schedule. Good for reseting back to before any groups were made
+#Input: check anything using data['{fieldName}']
+#Output: list of students and projects
 @csrf_exempt
 def GetInitialGridBuild(request):
     try:
@@ -1270,6 +1365,10 @@ def GetInitialGridBuild(request):
         print(''.join(traceback.format_exception(*exc_info)))
         return HttpResponse(status=400, content=json.dumps(str(e)))
 
+
+#Summary: Send emails to all members of all group with their group info and project assigned. Possibly dangerous since it uses the CMS database. Can send email to old members so i would suggest this is removed
+#Input: year and term
+#Output: 
 def SendFinalizeEmails(year, term):
     if(int(year) < 2020):
         return None
@@ -1300,6 +1399,9 @@ def SendFinalizeEmails(year, term):
                     nospampls = 1 
     server.quit()
     return None
+
+
+################################## Everything below this is for working with editing / deleting stuff from the cms. Everything is pretty much similar to that above
 
 @csrf_exempt
 def UpdateCMSProject(request):

@@ -22,12 +22,10 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 
+#This is where you define URL's for endpoints. They must end in a "/" and they must always have the "name" attribute
+#everything else should be pretty easy to follow
 urlpatterns = [
-    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(r'api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path(r'api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
