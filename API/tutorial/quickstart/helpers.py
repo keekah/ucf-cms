@@ -2,6 +2,7 @@ from django.utils.timezone import now
 from tutorial.quickstart.models import Project, Student, StudentProjectRanking
 import json, os
 
+#Gets the current term. Adjust this if term months ever change or new ones are added
 def GetCurrentTerm():
     month = now().month
     if(month >= 8 and month < 12):
@@ -11,6 +12,11 @@ def GetCurrentTerm():
     else:
         return 'summer'
 
+#Oh boy howdy you're in for a rough one here
+#Converts the output from the scheduler to the expected input for the front end
+#Also to solve "locked allows a projects max to be ignored" this will also reassign any student in a project..
+#where theres a locked student and it is past the project max
+#yea i know, its rediculous...
 def ConvertAlgFileToJson(fileName, sentYear, sentTerm, getScheduleBit=0):
     with open(fileName, "r") as f:
         data = f.read()
@@ -83,6 +89,7 @@ def ConvertAlgFileToJson(fileName, sentYear, sentTerm, getScheduleBit=0):
         ret = ConvertIDsFromAlg(ret, sentYear, sentTerm)
     return json.dumps(ret)
 
+#takes all the data from the database and creates the expected json input for the front end grid
 def BuildInitialGrid(year, term):
     try:
         tableProjectList = Project.objects.filter(CurrentYear=year, CurrentTerm=term)
@@ -145,7 +152,7 @@ def BuildInitialGrid(year, term):
     except Exception as e:
         print(str(e))
         return None
-
+# returns if a project had been run before or not
 def RunBefore(year, term):
     listFileString = "tutorial/quickstart/Scheduler/Schedule_Runs/{}/{}".format(year, term)
     if not os.path.exists(listFileString):
@@ -156,6 +163,8 @@ def RunBefore(year, term):
             return 0
     return 1
 
+# Jesus why did i even have to do this
+# Takes all of the projects in the json Obj and turns the project id into that of a 0 - x scale
 def ConvertGridJsonToAlgJson(jsonObj):
     i = 0
     for prj in jsonObj['projectList']:
@@ -182,6 +191,7 @@ def ConvertGridJsonToAlgJson(jsonObj):
         i+=1
     return jsonObj
 
+#takes the scheduler output and converts all the 0 - x id's to the IDs of actual projects on the backend
 def ConvertIDsFromAlg(jsonObj, year, term):
     for std in jsonObj['Students']:
         currentID = std['ProjectID'] 
@@ -206,6 +216,7 @@ def ConvertIDsFromAlg(jsonObj, year, term):
 
     return jsonObj
 
+#makes sure that project changes on the db are updated to the json obj
 def VerifyProjectsAreUpdated(jsonObj):
     for project in jsonObj['projectList']:
         query = Project.objects.get(id=project['ID'])
