@@ -1171,11 +1171,10 @@ def FinalizeScheduleVersion(request):
 @csrf_exempt 
 def UploadOldData(request):
     try:
-        inputFile = request.FILES['file']
+        inputFile = request.FILES["file"]
         inputFileName = inputFile.name
         bigData = inputFile.read()
         jsonFile = json.loads(bigData)
-        jsonFile['Summer 2019'] = 0
         jsonFile['Fall 2019'] = 0
         jsonFile['Summer 2016'] = 0
         jsonFile['Spring 2016'] = 0
