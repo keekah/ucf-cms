@@ -79,6 +79,7 @@ class Projects extends React.Component {
             currentTerm = element;
         });
         this.setState( { isLoaded: true, projects: json.project_list, termList: sortedArray, termFilter: currentTerm});
+        console.log(json.project_list.length);
       })
       .catch(err => {
         console.log("looks like the backend is being worked on");

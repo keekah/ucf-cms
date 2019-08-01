@@ -1,4 +1,164 @@
 {
+  "Summer 2019": {
+    "Senior Design 1": [],
+    "Senior Design 2": [
+      {
+        "group number": "1",
+        "group name": "P.E.A.R. 2.0",
+        "members": [
+          "Abigail Alperovich",
+          "Nadia Khederoo",
+          "Salwa Marzan",
+          "Keira Taylor",
+          "Sarah Thompson"
+        ],
+        "emails": [
+          "abby.alps@knights.ucf.edu",
+          "nkhederoo@knights.ucf.edu",
+          "smarzan@knights.ucf.edu",
+          "kibbitintheknight@knights.ucf.edu",
+          "thompsonsj4@knights.ucf.edu"
+        ],
+        "final doc": {
+          "name": "Final Design Document.pdf",
+          "link": "submitdownload.php?fileid=624"
+        },
+        "presentation": {
+          "name": "Final_Presentation.pptx",
+          "link": "submitdownload.php?fileid=625"
+        },
+        "conference paper": {
+          "name": "Conference Paper.pdf",
+          "link": "submitdownload.php?fileid=626"
+        },
+        "timestamp": "2019-07-26 23:24:39"
+      },
+      {
+        "group number": "2",
+        "group name": "Gamification of Tasks via AR",
+        "members": [
+          "Angel Castillo",
+          "Christian Jaimes",
+          "Daniel Klishin",
+          "Maryam Ramezanzadehmoghadam",
+          "John Yang"
+        ],
+        "emails": [
+          "castillo.angel@knights.ucf.edu",
+          "chrisjaimes@knights.ucf.edu",
+          "danik9970711@knights.ucf.edu",
+          "m.moghadam@knights.ucf.edu",
+          "j.a.yang@knights.ucf.edu"
+        ],
+        "final doc": {
+          "name": "",
+          "link": ""
+        },
+        "presentation": {
+          "name": "",
+          "link": ""
+        },
+        "conference paper": {
+          "name": "",
+          "link": ""
+        },
+        "timestamp": "2019-07-29 10:10:00"
+      },
+      {
+        "group number": "3",
+        "group name": "Limbitless Solutions Inc. Arduino IDE Integration",
+        "members": [
+          "Geoff Hufford",
+          "Alexander McLaughlin",
+          "David Portz",
+          "Trevor Tosi",
+          "Steve Weiser"
+        ],
+        "emails": [
+          "ahufford92@gmail.com",
+          "alex.mclaughlin@knights.ucf.edu",
+          "dportz@knights.ucf.edu",
+          "nightchase@knights.ucf.edu",
+          "weiser.steven369@knights.ucf.edu"
+        ],
+        "final doc": {
+          "name": "SR DESIGN FINAL DOC.pdf",
+          "link": "submitdownload.php?fileid=618"
+        },
+        "presentation": {
+          "name": "SR DESIGN FINAL PRES.pptx",
+          "link": "submitdownload.php?fileid=619"
+        },
+        "conference paper": {
+          "name": "SR DESIGN CONF PAPER.pdf",
+          "link": "submitdownload.php?fileid=620"
+        },
+        "timestamp": "2019-07-26 00:14:40"
+      },
+      {
+        "group number": "4",
+        "group name": "Senior Design Scheduling Algorithm and CMS",
+        "members": [
+          "Tyler  Cuervo",
+          "Mariana Gomez Kusnecov",
+          "Stephen  Powell",
+          "Iryna Protasova",
+          "Kika Wingert"
+        ],
+        "emails": [
+          "cuervotyler1@gmail.com",
+          "Marianagomezk@outlook.com",
+          "stephenmpowell4@gmail.com",
+          "irynaprotasova@gmail.com",
+          "kika@knights.ucf.edu"
+        ],
+        "final doc": {
+          "name": "group_4_final_doc.pdf",
+          "link": "submitdownload.php?fileid=621"
+        },
+        "presentation": {
+          "name": "Group 4 Final Presentation.pptx",
+          "link": "submitdownload.php?fileid=622"
+        },
+        "conference paper": {
+          "name": "group_4_conf_paper.pdf",
+          "link": "submitdownload.php?fileid=623"
+        },
+        "timestamp": "2019-07-26 18:14:02"
+      },
+      {
+        "group number": "5",
+        "group name": "Sr. Design Webcourses Improvements",
+        "members": [
+          "Vincent Brusco",
+          "Ayleen Cabrera Ordaz",
+          "Frantzcito Joseph",
+          "Mahzain Malik",
+          "Kevin Parisapogu"
+        ],
+        "emails": [
+          "vbrusco@knights.ucf.edu",
+          "cabreraordaz@knights.ucf.edu",
+          "frantzcito@knights.ucf.edu",
+          "mahzain@knights.ucf.edu",
+          "kevparisapogu@knights.ucf.edu"
+        ],
+        "final doc": {
+          "name": "",
+          "link": ""
+        },
+        "presentation": {
+          "name": "",
+          "link": ""
+        },
+        "conference paper": {
+          "name": "",
+          "link": ""
+        },
+        "timestamp": "2019-07-29 10:10:00"
+      }
+    ]
+  },  
   "Spring 2019": {
     "Senior Design 1": [],
     "Senior Design 2": [
